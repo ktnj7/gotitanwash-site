@@ -109,6 +109,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .ba::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 0 1px var(--blue)}
 .ba.photo::after{display:none}
 
+.ba-slider{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:#e9eef6;--pos:50%;user-select:none;touch-action:pan-y}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.4);pointer-events:none}
+.ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:18px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.ba-slider .tag{position:absolute;bottom:12px;pointer-events:none;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.65);color:#fff;padding:5px 10px;border-radius:999px}
+.ba-slider .tl{left:12px}.ba-slider .tr{right:12px}
+.ba-slider figcaption{position:absolute;left:0;right:0;top:0;padding:12px 14px;font-weight:700;font-size:14px;color:#fff;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.6),transparent)}
+
 /* why */
 .why{display:grid;gap:16px;margin-top:32px}
 @media(min-width:800px){.why{grid-template-columns:repeat(4,1fr)}}
@@ -223,11 +233,33 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
     <div class="eyebrow" data-es="Nuestro trabajo">Our Work</div>
     <h2 data-es="Antes y después">Before &amp; after</h2>
     <p class="lead" data-es="Mira más trabajos en Instagram @gotitanwash.">See more of our work on Instagram <a href="https://www.instagram.com/gotitanwash" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">@gotitanwash</a>.</p>
-    <!-- Replace each placeholder <figure> with: <figure class="ba photo"><img src="/work/driveway.jpg" alt="Driveway before and after"><figcaption>Driveway · Kendall</figcaption></figure> -->
+    <p class="small" style="margin-top:6px" data-es="Desliza para comparar el antes y el después.">Drag the slider to compare before and after.</p>
+    <!-- To add a pair: put {name}-before.webp and {name}-after.webp (1000x750) in /work and copy one <figure class="ba-slider"> block. -->
     <div class="grid three">
-      <figure class="ba"><figcaption data-es="Entrada · Miami">Driveway · Miami</figcaption><div class="half before"><span class="tag" data-es="Antes">Before</span></div><div class="half after" style="justify-content:flex-end"><span class="tag" data-es="Después">After</span></div></figure>
-      <figure class="ba"><figcaption data-es="Techo de tejas · Lavado suave">Tile Roof · Soft Wash</figcaption><div class="half before"><span class="tag" data-es="Antes">Before</span></div><div class="half after" style="justify-content:flex-end"><span class="tag" data-es="Después">After</span></div></figure>
-      <figure class="ba"><figcaption data-es="Pool deck · Broward">Pool Deck · Broward</figcaption><div class="half before"><span class="tag" data-es="Antes">Before</span></div><div class="half after" style="justify-content:flex-end"><span class="tag" data-es="Después">After</span></div></figure>
+      <figure class="ba-slider">
+        <img src="/work/patio-after.webp" alt="Concrete patio after cleaning" loading="lazy" width="1000" height="750">
+        <div class="ba-before"><img src="/work/patio-before.webp" alt="Concrete patio before cleaning" loading="lazy" width="1000" height="750"></div>
+        <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
+        <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        <figcaption data-es="Patio · Lavado a presión">Patio · Pressure Washing</figcaption>
+      </figure>
+      <figure class="ba-slider">
+        <img src="/work/fence-after.webp" alt="Wood fence after cleaning" loading="lazy" width="1000" height="750">
+        <div class="ba-before"><img src="/work/fence-before.webp" alt="Wood fence before cleaning" loading="lazy" width="1000" height="750"></div>
+        <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
+        <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        <figcaption data-es="Cerca de madera · Limpieza">Wood Fence · Cleaning</figcaption>
+      </figure>
+      <figure class="ba-slider">
+        <img src="/work/patio-aerial-after.webp" alt="Patio from above after cleaning" loading="lazy" width="1000" height="750">
+        <div class="ba-before"><img src="/work/patio-aerial-before.webp" alt="Patio from above before cleaning" loading="lazy" width="1000" height="750"></div>
+        <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
+        <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        <figcaption data-es="Patio · Vista desde drone">Patio · Drone View</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -346,6 +378,13 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Before/after sliders
+document.querySelectorAll('.ba-slider').forEach(function (f) {
+  var r = f.querySelector('input');
+  function set() { f.style.setProperty('--pos', r.value + '%'); }
+  r.addEventListener('input', set); set();
+});
 
 // English / Spanish toggle
 var lang = 'en';
