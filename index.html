@@ -119,6 +119,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .ba-slider .tl{left:12px}.ba-slider .tr{right:12px}
 .ba-slider figcaption{position:absolute;left:0;right:0;top:0;padding:12px 14px;font-weight:700;font-size:14px;color:#fff;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.6),transparent)}
 
+.more-title{font-size:24px;margin:48px 0 4px}
+.pairs{display:grid;gap:18px;margin-top:20px}
+@media(min-width:800px){.pairs{grid-template-columns:1fr 1fr}}
+.pair{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 18px rgba(11,19,36,.05)}
+.pair-imgs{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line)}
+.pair-imgs img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.pair figcaption{padding:12px 16px;font-weight:700;font-size:15px}
+
 /* why */
 .why{display:grid;gap:16px;margin-top:32px}
 @media(min-width:800px){.why{grid-template-columns:repeat(4,1fr)}}
@@ -242,7 +250,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
         <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
         <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        <figcaption data-es="Patio · Lavado a presión">Patio · Pressure Washing</figcaption>
+        <figcaption data-es="Patio · Plantation">Patio · Plantation</figcaption>
       </figure>
       <figure class="ba-slider">
         <img src="/work/fence-after.webp" alt="Wood fence after cleaning" loading="lazy" width="1000" height="750">
@@ -250,7 +258,7 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
         <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
         <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        <figcaption data-es="Cerca de madera · Limpieza">Wood Fence · Cleaning</figcaption>
+        <figcaption data-es="Cerca de madera · Hialeah">Wood Fence · Hialeah</figcaption>
       </figure>
       <figure class="ba-slider">
         <img src="/work/patio-aerial-after.webp" alt="Patio from above after cleaning" loading="lazy" width="1000" height="750">
@@ -258,7 +266,34 @@ footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-s
         <span class="tag tl" data-es="Antes">Before</span><span class="tag tr" data-es="Después">After</span>
         <div class="ba-handle" aria-hidden="true"><span>&#x2194;</span></div>
         <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
-        <figcaption data-es="Patio · Vista desde drone">Patio · Drone View</figcaption>
+        <figcaption data-es="Patio · Miramar (drone)">Patio · Miramar (Drone)</figcaption>
+      </figure>
+    </div>
+    <h3 class="more-title" data-es="Más proyectos">More projects</h3>
+    <div class="pairs">
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/stucco-wall-before.webp" alt="Stucco wall before cleaning" loading="lazy" width="720" height="540"><img src="/work/stucco-wall-after.webp" alt="Stucco wall after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Pared de stucco · Lavado suave">Stucco Wall · Soft Wash</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/stairs-before.webp" alt="Stairwell before cleaning" loading="lazy" width="720" height="540"><img src="/work/stairs-after.webp" alt="Stairwell after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Escaleras · Lavado a presión">Stairwell · Pressure Washing</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/tile-walkway-before.webp" alt="Tile walkway before cleaning" loading="lazy" width="720" height="540"><img src="/work/tile-walkway-after.webp" alt="Tile walkway after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Pasillo de losas">Tile Walkway</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/fence-gate-before.webp" alt="Wood fence gate before cleaning" loading="lazy" width="720" height="540"><img src="/work/fence-gate-after.webp" alt="Wood fence gate after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Portón de madera">Wood Fence Gate</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/fence-corner-before.webp" alt="Wood fence corner before cleaning" loading="lazy" width="720" height="540"><img src="/work/fence-corner-after.webp" alt="Wood fence corner after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Cerca de madera">Wood Fence</figcaption>
+      </figure>
+      <figure class="pair">
+        <div class="pair-imgs"><img src="/work/fence-hedge-before.webp" alt="Wood fence along a walkway before cleaning" loading="lazy" width="720" height="540"><img src="/work/fence-hedge-after.webp" alt="Wood fence along a walkway after cleaning" loading="lazy" width="720" height="540"></div>
+        <figcaption data-es="Cerca de madera · Junto a la acera">Wood Fence · Along Walkway</figcaption>
       </figure>
     </div>
   </div>
